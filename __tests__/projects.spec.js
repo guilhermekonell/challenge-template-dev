@@ -7,14 +7,14 @@ describe('Projects', () => {
       .post('/projects')
       .send({
         title: 'Novo projeto',
-        owner: 'Diego',
+        owner: 'Guilherme',
       });
 
     const response = await request(app).get('/projects');
 
     expect(response.body).toEqual(
       expect.arrayContaining([
-        { title: 'Novo projeto', owner: 'Diego' }
+        { title: 'Novo projeto', owner: 'Guilherme' }
       ])
     )
   });
